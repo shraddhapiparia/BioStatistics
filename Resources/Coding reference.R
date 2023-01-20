@@ -70,4 +70,21 @@ y1 = rep("yes",times=3) # replicates 3 times i.e. y = "yes","yes","yes"
 y2 = c("no","no")
 y = c(y1,y2) # concatenate y1 and y2
 
+10. Distribution
+prop.table(tab, margin=1) # shows percentage of rows (Adds upto 1)
+prop.table(tab, margin=2) # shows percentage of column (adds upto 1)
+
+Numeric summaries:
+summary() # five number summary
+sd()      # standard deviaation
+round(tab, 3) # rounds table values to 3 decimal places
+barplot(tab1) # basic barplot
+barplot(tab, ylim=c(0, 0.5), ylab="Proportiom", xlab="Race/Ethnicity", names.arg=c("asn",---))
+
+hist(col=)
+
+
+
+
+
 
