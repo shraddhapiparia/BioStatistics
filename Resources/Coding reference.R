@@ -70,7 +70,7 @@ y1 = rep("yes",times=3) # replicates 3 times i.e. y = "yes","yes","yes"
 y2 = c("no","no")
 y = c(y1,y2) # concatenate y1 and y2
 
-10. Distribution
+10. Data distribution
 prop.table(tab, margin=1) # shows percentage of rows (Adds upto 1)
 prop.table(tab, margin=2) # shows percentage of column (adds upto 1)
 
@@ -82,6 +82,17 @@ barplot(tab1) # basic barplot
 barplot(tab, ylim=c(0, 0.5), ylab="Proportiom", xlab="Race/Ethnicity", names.arg=c("asn",---))
 
 hist(col=)
+
+11. Boxplot
+boxplot(ht$SBP.Baseline, ht$SBP.Followup)
+abline(h=0)
+
+or use the following
+
+with(ht, boxplot(SBP.Change, ylab="Change in SBP",
+  col="coral", cex.lab=1.5, cex.axis=1.5))
+abline(h=0, col=8)
+
 
 
 
