@@ -16,8 +16,10 @@ Barplots and clustered barplots
 Five point summary
 
 Mean
+mean(data$col)
 
 Standard deviation
+sd(data$col)
 
 1.3 Analyses steps:
 Read datasets
