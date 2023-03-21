@@ -14,6 +14,7 @@ Barplots and clustered barplots
 
 1.2 Continuous variables:
 Five point summary
+summary(data$col)
 
 Mean
 mean(data$col)
