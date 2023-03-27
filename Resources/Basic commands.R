@@ -81,7 +81,7 @@ round(tab, 3) # rounds table values to 3 decimal places
 barplot(tab1) # basic barplot
 barplot(tab, ylim=c(0, 0.5), ylab="Proportiom", xlab="Race/Ethnicity", names.arg=c("asn",---))
 
-hist(col=)
+hist(col_name, col=c(1:8), main="TITLE", xlab="X-AXIS LABEL", ylab = "Y-AXIS LABEL")
 
 11. Boxplot
 boxplot(ht$SBP.Baseline, ht$SBP.Followup)
