@@ -86,7 +86,7 @@ mcnemarExactDP(x=9, m=11, n=161) # need total n for CI
 # Two independent samples binary outcome
 General recommendation: 
 Use PCST, no contibuity correction, for large samples i.e counts in each cell > 5
-Use Exact PCST or Fisher's exact test for small samples i.e. counts < 5
+Use Exact PCST or Fishers exact test for small samples i.e. counts < 5
 prop.test(x=c(58,49), n=c(407,414), correct = FALSE)
 
 8. Pearsons chi-square test
