@@ -173,10 +173,6 @@ df2 = dataframe[!is.na(dataframe$col) & !is.na(dataframe$group), ]
 cor.test(rank(df2$col), rank(df2$group), meth=”pearson”)
 
 
-fit ← lm(son~father, data=mgal); summary(fit) 
-
-confint(fit) # provides confidence intervals
-
 # Simple linear Regression
 
 fit = lm(col1 ~ col2, data=dataframe); summary(fit); abline(fit) # Provides intercept; r = estimate/sd(son) *sd(father) = cor.test(son, father)
