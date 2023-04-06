@@ -124,12 +124,21 @@ round(tab, 3) # rounds table values to 3 decimal places
 barplot(tab1) # basic barplot
 barplot(tab, ylim=c(0, 0.5), ylab="Proportiom", xlab="Race/Ethnicity", names.arg=c("asn",---))
 
-# Student's t quantiles and probabilitiesqnorm(0.975)       # Pr(Z>1.96) = 0.025qt(0.975, df=25)   # Pr(T>2.06|df=25) = 0.025  qt(0.975, df=40)   # Pr(T>2.02|df=40) = 0.025qt(0.975, df=73)   # Pr(T>1.99|df=73) = 0.025pnorm(-1)          # Pr(Z<-1) = 0.159pt(-1, df=12)      # Pr(T<-1|df=12) = 0.169pt(-1, df=73)      # Pr(T<-1|df=73) = 0.160
+# Student's t quantiles and probabilities
+qnorm(0.975)       # Pr(Z>1.96) = 0.025
+qt(0.975, df=25)   # Pr(T>2.06|df=25) = 0.025  
+qt(0.975, df=40)   # Pr(T>2.02|df=40) = 0.025
+qt(0.975, df=73)   # Pr(T>1.99|df=73) = 0.025
+
+pnorm(-1)          # Pr(Z<-1) = 0.159
+pt(-1, df=12)      # Pr(T<-1|df=12) = 0.169
+pt(-1, df=73)      # Pr(T<-1|df=73) = 0.160
 
 # Set seed value
 set.seed(seed=72020)  # for reproducibility of simulations
 
-
+# Clean working directory
+rm(list=ls())
 
 
 
