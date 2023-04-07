@@ -9,6 +9,7 @@ cor.test(data$col1, data$col2) # WALD test
 
 # Compute CI: 
 confint(fit)
+confint(fit, "exercise") # if multiple values can select the variable for which CI is needed else it prints all
 
 #Simple linear regression: analysis of variance table (slide 29)
 anova(fit)
@@ -16,3 +17,4 @@ summary(fit)
 
 Mean square residual s^2 = RSS/(n-2)
 R^2 = MSS/TSS
+
