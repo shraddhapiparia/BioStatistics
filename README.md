@@ -83,7 +83,7 @@ This repository contains a collection of statistical analysis methods for differ
 # The repository is structured as follows:
 ## Resources Folder
 
-The `Resources` folder contains the following:
+The `Resources` folder contains the following files:
 
 ### Basic Commands
 
@@ -93,15 +93,18 @@ The `Basic Commands` file introduces the fundamentals of statistical inference. 
 
 The `Statistical Tests` file includes commands for commonly used statistical analyses. It covers tests for continuous (scale) and binary response variables in the case of one, two, and three or more groups. The statistical methods covered include independent samples and paired samples t-tests, tests based on ranks, Pearson's chi-square and Fisher's exact tests for binary variables, paired tests for continuous and binary variables, one-way ANOVA, correlation, and simple linear regression.
 
-## Models Folder
+### Models 
 
-The `Models` folder includes more advanced regression-based statistical analyses. It covers the following models:
+The `Models` file includes more advanced regression-based statistical analyses. It covers the following models:
 
 - Simple linear regression and correlation analysis
 - Multiple linear regression
 - Logistic regression
 - Cox proportional hazards models
 
+## Examples Folder
+
+The `Examples` folder contains data files and corresponding R code for analysis. You can explore these examples to see practical applications of the statistical analysis methods provided in this repository.
 
 Feel free to explore the repository and the individual method folders for detailed explanations and code examples.
 
