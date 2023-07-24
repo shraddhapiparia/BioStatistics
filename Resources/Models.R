@@ -355,3 +355,37 @@ summary(fit)
 Mean square residual s^2 = RSS/(n-2)
 R^2 = MSS/TSS
 
+# Assumptions of the model:
+# - model equation is true: linearity of E(yi) has to hold for any values of the other predictors if it does not, log transform the outcome
+
+
+# - error terms have constant standard deviation for any combination of predictor values
+# - error terms are normally distributed
+# - error terms are independent of each other
+
+
+# Nested models compared using an F-test
+drop1(fit, test="F")
+
+# 19. Linear Regression with interaction
+
+fit = lm(col1 ~ col2 + col3 + col2 * col3, data=dataframe); summary(fit);
+
+# where col2*col3 is interaction term and only used to assess interaction term
+
+# 20. Logistic model
+
+fit = glm(col1 ~ col2 + cov, family=binomial, data=dat)
+
+# 21. KM curve for survival plot
+plot(fit.survival, col=c(4,3,2), xlab = "Time (days)", ylab = "Survival Probability", main = "Survival Distribution"); legend(x=1, y = 0.4, c( "alive", "not alive"), col = c(2,3), lty=c(1,1))
+
+# 22. Cox hazard model
+fit.cox <- coxph(Surv(survivaltime, mortality1yr) ~ meld, data = lt); summary(fit.cox)
+
+# 23. Survival difference between two groups
+survdiff(Surv(persCtrDays, persCtrStatus)~statin, data=hlp)
+
+
+
+
