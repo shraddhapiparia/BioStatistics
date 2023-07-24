@@ -36,11 +36,13 @@ summary(fit.sexadj)
 # PBF = 21.22304 - 9.68664(sexMALE) + 0.31838(age)
 
 #### Based on the model PBF ∼ sex + age, is there a statistical difference between men and women? What is the adjusted mean difference between groups (and 95% CI)?
-
+##### There is a significant effect of sex after adjusting for age, with men having lower mean PBF by 9.687 points, 95% CI (8.405, 10.988) points, p-value < 10−15. The adjusted effect of sex is slightly stronger than the unadjusted effect.
 
 #### Calculate and interpret the coefficient of determination R2 for the model, and the η2 for sex and age from the model above.
 library(lsr)
-etaSquared(fit.sexadj, anova=TRUE)
+etaSquared(fit.sexadj, anova=TRUE
+
+##### Taken together, sex and age explain R2 = 0.363, or 36.3%, of the variance in PBF. Sex explains η2 = 21.5% of the variation in PBF, while age explains η2 = 17.5% of PBF.
 
 #### Draw a scatterplot of PBF on age, with different symbols (e.g., different colors) for men and for women. Include the regression lines for men and women implied by the model above.
 plot (jackson$pctfat ~ jackson$age, pch=16, cex = 0.6, col = ifelse(jackson$sex=="MALE", 4, 2), cex.lab = 1.7, xlab="PBF", ylab="Age")
@@ -56,6 +58,7 @@ jackson$agecat <- cut(jackson$age, breaks = c(15, 25, 35, 45, 55, 65), right = F
 fit.agecat <- lm(pctfat ~ sex + agecat, data = jackson)
 summary(fit.agecat)
 
+##### The summary of age variable confirms that age values are between 15.94 and 65.88. The F-test for categorical age is 45.54 with df = 4,652, p-value < 10−15. Categirical age is highly significant. An investigation of the coefficients indicates that indeed the age effect does not seem to be linear and it slows down after age 45.
 
 #### Based on the model above, find which age groups differ significantly in PBF from the 35-44 group, after adjusting for sex. Use a correction for multiple comparisons (4 comparisons).
 jackson$agecat_ref3 = relevel(jackson$agecat, ref=3)
@@ -63,3 +66,8 @@ fit.agecat_ref3 <- lm(pctfat ~ sex + agecat_ref3, data = jackson)
 coorected = TukeyHSD(aov(fit.agecat_ref3), alpha=0.5/4)
 (coorected)
 
+##### We re-fit the model using 35-44 group as the reference. The mean PBF is signficantly lower for the 15-24 and 25-34 age groups, compared to age 35-44, whereas age groups 45-54 and 55-65 do not differ significantly in mean PBF from 35-44 age group. (This is true with or without a Bonferroni correction.)
+
+
+#### The models PBF ∼ sex + age and PBF ∼ sex + agecat are not nested, due to the binning of age into groups. For this reason, they cannot be compared directly using an F-test. Based on the proportion of outcome variance explained, which of the two models is better?
+##### The coefficient of determination R2 is 36.32% for the model with continuous age, and 36.65% for the model with binned age, giving the latter a very slight advantage. (Note however that the adjusted R2, which corrects for the model degrees of freedom, is almost identical for the two models, 36.13 and 36.16%.)
